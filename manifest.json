@@ -1,0 +1,16 @@
+{
+    "name": "Populate Squashed Merge Message from PR Title",
+    "description": "Automatically populates PR Title as Squash and Merge commit message (when `squash and merge` button is clicked)",
+    "version": "1.0",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": [ "https://git.soma.salesforce.com/*/pull/*", "https://github.com/*/pull/*"],
+            "run_at": "document_end",
+            "js": [ "content.js" ]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
